@@ -1,80 +1,36 @@
-# Ejemplos de Procesamiento de Datos en Python
+# Procesamiento de Datos en Python
 
-Este repositorio contiene ejemplos de procesamiento de datos en Python utilizando los formatos CSV y JSON. Los ejemplos incluyen cómo leer y mostrar datos en consola.
+Este repositorio contiene ejemplos de procesamiento de datos en Python utilizando los formatos CSV y JSON. Los archivos están organizados de la siguiente manera:
 
-## Procesamiento de Datos CSV
+- `csv_processor.py`: Contiene un ejemplo de cómo procesar datos CSV en Python.
+- `json_processor.py`: Contiene un ejemplo de cómo procesar datos JSON en Python.
+- `main.py`: Proporciona un menú de selección para ejecutar los ejemplos de procesamiento de datos CSV o JSON.
 
-El archivo `csv_example.py` contiene un ejemplo de cómo leer datos de un archivo CSV y mostrarlos en la consola.
+## Funcionamiento
 
-```python
-import csv
-from io import StringIO
+### `csv_processor.py`
 
-# Tu cadena CSV
-datos_csv = """nombre,edad,ciudad,profesion
-Alice,30,New York,Ingeniera
-Bob,25,Los Angeles,Doctor
-Charlie,35,Chicago,Abogado
-David,28,Miami,Arquitecto
-Eva,40,Houston,Profesor
-"""
+Este archivo contiene un ejemplo de procesamiento de datos CSV en Python. Lee una cadena CSV de datos de ejemplo y utiliza la biblioteca `csv` para leer y mostrar los datos en la consola.
 
-# Crear un objeto StringIO (simula un archivo)
-archivo_csv = StringIO(datos_csv)
+### `json_processor.py`
 
-# Leer la cadena CSV
-lector_csv = csv.reader(archivo_csv)
+Este archivo contiene un ejemplo de procesamiento de datos JSON en Python. Contiene un objeto JSON de ejemplo y utiliza la biblioteca `json` para cargar y mostrar los datos en la consola.
 
-# Iterar sobre las filas e imprimir los datos
-for fila in lector_csv:
-    print(fila)
-Procesamiento de Datos JSON
-El archivo json_example.py contiene un ejemplo de cómo cargar y mostrar datos desde un objeto JSON en Python.
+### `main.py`
 
-python
-Copy code
-import json
+El archivo `main.py` proporciona un menú de selección para el usuario. El usuario puede elegir entre procesar datos CSV o JSON. Dependiendo de la opción seleccionada, se importan las funciones correspondientes de `csv_processor.py` o `json_processor.py` y se ejecutan los ejemplos.
 
-# Tu objeto JSON
-datos_json = '''
-{
-    "personas": [
-        {
-            "nombre": "Alice",
-            "edad": 30,
-            "ciudad": "New York",
-            "profesion": "Ingeniera"
-        },
-        {
-            "nombre": "Bob",
-            "edad": 25,
-            "ciudad": "Los Angeles",
-            "profesion": "Doctor"
-        },
-        {
-            "nombre": "Charlie",
-            "edad": 35,
-            "ciudad": "Chicago",
-            "profesion": "Abogado"
-        }
-    ]
-}
-'''
+## Cómo Ejecutar los Ejemplos
 
-# Cargar el JSON
-datos = json.loads(datos_json)
+Para ejecutar los ejemplos, sigue estos pasos:
 
-# Imprimir el JSON cargado
-print(json.dumps(datos, indent=4))
+1. Asegúrate de tener Python instalado en tu sistema.
 
+2. Clona este repositorio o descarga los archivos en tu computadora.
 
-Cómo Ejecutar los Ejemplos
-Para ejecutar estos ejemplos, asegúrate de tener Python instalado en tu sistema. Luego, puedes ejecutar cada uno de los archivos Python (csv_example.py y json_example.py) desde la línea de comandos de la siguiente manera:
+3. Desde la línea de comandos, navega hasta el directorio donde se encuentran los archivos.
 
-python csv_example.py
+4. Ejecuta `main.py` utilizando el siguiente comando:
 
-python json_example.py
-
-Estos comandos ejecutarán los ejemplos respectivos y mostrarán los resultados en la consola.
-
-¡Diviértete explorando y procesando datos en Python!
+```bash
+python main.py
